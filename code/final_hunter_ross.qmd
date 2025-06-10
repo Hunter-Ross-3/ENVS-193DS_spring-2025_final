@@ -76,8 +76,8 @@ ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) 
   geom_point() +# Add point  for each month
   scale_x_continuous(breaks = 1:12, labels = month.abb) +  # Month labels
   scale_color_gradient(
-    low = "lightblue", 
-    high = "darkblue", 
+    low = "lightgreen", 
+    high = "darkgreen", 
     name = "Year"
   ) +
   labs(
@@ -94,12 +94,14 @@ ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) 
 ```
 
 
-
 # Problem 3. Data analysis
 
 ### a. Response variable
 
-
+```{r}
+nest_boxes <- read.csv(here("data/occdist.csv"))
+```
+The 1 means that the bird was present a 0 means that the bird was not present. 
 
 ### b. Purpose of study
 

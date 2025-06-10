@@ -149,11 +149,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 3
    year month mean_temp
   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
-1  1985    11      15.3
-2  1992     4      15.4
-3  2000     9      17.3
-4  2015     3      15.8
-5  1993    10      17.7</code></pre>
+1  1988    11      14.7
+2  2005     6      14.2
+3  1997     7      17.4
+4  1996     4      13.2
+5  2008     3      12.5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#show output</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -178,8 +178,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span><span class="co"># Add point  for each month</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">labels =</span> month.abb) <span class="sc">+</span>  <span class="co"># Month labels</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"lightblue"</span>, </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"darkblue"</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"lightgreen"</span>, </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"darkgreen"</span>, </span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Year"</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
@@ -206,6 +206,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Problem 3. Data analysis</h1>
 <section id="a.-response-variable" class="level3">
 <h3 class="anchored" data-anchor-id="a.-response-variable">a. Response variable</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nest_boxes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data/occdist.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The 1 means that the bird was present a 0 means that the bird was not present.</p>
 </section>
 <section id="b.-purpose-of-study" class="level3">
 <h3 class="anchored" data-anchor-id="b.-purpose-of-study">b. Purpose of study</h3>
