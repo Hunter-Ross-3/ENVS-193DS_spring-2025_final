@@ -37,6 +37,31 @@ Nitrogen load increases with distance from the headwaters, suggesting downstream
 
 ### a. Cleaning and summarizing
 
+```{r - cleaning data}
+
+sst_clean <- sst |> 
+  #convert 'date' column to Date type
+  mutate(date = ymd(date)) |> 
+   #extract yr and month
+   mutate(
+     year = year(date), 
+     month = month(date)
+   ) |> 
+  #group my site year and month
+  group_by(site, year, month) |> 
+  #calculate mean temp
+  summarise(mean_temp = mean(temp, na.rm = TRUE), .groups = "drop") 
+  
+#show 5 random rows
+sst_clean |> 
+  slice_sample(n= 5)
+
+#show output
+str(sst_clean)
+
+```
+
+
 
 
 ### b. Data visualization
