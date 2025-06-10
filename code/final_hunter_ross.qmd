@@ -6,13 +6,17 @@ format: html
 https://github.com/Hunter-Ross-3/ENVS-193DS_spring-2025_final
 
 ```{r - packages}
-message = FALSE
+#| message: false
+#loading packages
 
 library(tidyverse)
 library(janitor)
 library(here)
 library(flextable)
 library(readxl)
+
+# read in data
+set <- read.csv(here("data/SST_update2023.csv"))
 ```
 
 # Problem 1: Research writing 
