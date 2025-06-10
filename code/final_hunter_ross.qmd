@@ -47,8 +47,8 @@ sst_clean <- sst |>
      year = year(date), 
      month = month(date)
    ) |> 
-  #group my site year and month
-  group_by(site, year, month) |> 
+  #group by year and month
+  group_by(year, month) |> 
   #calculate mean temp
   summarise(mean_temp = mean(temp, na.rm = TRUE), .groups = "drop") 
   
@@ -62,9 +62,36 @@ str(sst_clean)
 ```
 
 
-
-
 ### b. Data visualization
+
+```{r - visualization}
+
+#filter to only have years 2018 to 2023
+sst_filtered <- sst_clean |> 
+  filter(year >= 2018, year <=2023)
+
+#create plot
+ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) +
+  geom_line() +# Add line for year
+  geom_point() +# Add point  for each month
+  scale_x_continuous(breaks = 1:12, labels = month.abb) +  # Month labels
+  scale_color_gradient(
+    low = "lightblue", 
+    high = "darkblue", 
+    name = "Year"
+  ) +
+  labs(
+    x = "Month",
+    y = "Mean Temperature (°C)",
+    title = "Monthly Mean SST by Site (2018–2023)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.border = element_rect(color = "black", fill = NA), 
+    panel.background = element_rect(fill = "white")
+  )
+
+```
 
 
 
