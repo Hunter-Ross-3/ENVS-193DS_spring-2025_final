@@ -23,7 +23,7 @@ sst <- read.csv(here("data/SST_update2023.csv"))
 
 ### a. Transparent statistical methods
 
-
+In part 1 the researchers used a correlation test because they are looking at the relationship between two continuous variables. In part 2 the researches used a ANOVA test because they are comparing different means. 
 
 ### b. More information needed
 
