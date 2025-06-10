@@ -105,7 +105,7 @@ The 1 means that the bird was present a 0 means that the bird was not present.
 
 ### b. Purpose of study
 
-
+Swift Parrots are a threatened species of conservation concern, while Common Starlings and Tree Martins are not. This study researches how environmental factors like proximity to forest edge and seasonal variation influence Swift Parrot nesting behavior, in contrast to the more common or invasive species. 
 
 ### c. Difference in "seasons"
 
