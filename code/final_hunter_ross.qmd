@@ -16,7 +16,7 @@ library(flextable)
 library(readxl)
 
 # read in data
-set <- read.csv(here("data/SST_update2023.csv"))
+sst <- read.csv(here("data/SST_update2023.csv"))
 ```
 
 # Problem 1: Research writing 
