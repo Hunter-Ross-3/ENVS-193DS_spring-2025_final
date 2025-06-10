@@ -27,7 +27,7 @@ In part 1 the researchers used a correlation test because they are looking at th
 
 ### b. More information needed
 
-
+Another test my coworker could run in a linear regression analysis. This test would give the rate of change in nitrogen load from the headwaters to downstream. Also my coworker could include more of the details in their description. For example we are told the p-vales but not the sample size, standard deviation, or mean all of which would give up a better understanding of the results.  
 
 ### c. Suggestions for rewriting
 
