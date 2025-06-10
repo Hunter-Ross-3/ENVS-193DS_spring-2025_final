@@ -31,7 +31,7 @@ Another test my coworker could run in a linear regression analysis. This test wo
 
 ### c. Suggestions for rewriting
 
-
+Nitrogen load increases with distance from the headwaters, suggesting downstream accumulation from runoff. It also differed by source type, indicating that multiple sources contribute more than others. TO better interpret these patterns, we need better summary statistics. (Linear regression: slope = [slope], r² = [r²], p = 0.03, α = 0.05; ANOVA: F = [F], df = [df], p = 0.02, α = 0.05; descriptive stats not yet reported)
 
 # Problem 2. Data Visualization
 
