@@ -83,13 +83,13 @@ ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) 
     high = "darkgreen", 
     name = "Year"
   ) +
-  labs(
+  labs( #add labels
     x = "Month",
     y = "Mean Temperature (°C)",
     title = "Monthly Mean SST by Site (2018–2023)"
   ) +
   theme_minimal() +
-  theme(
+  theme( 
     panel.border = element_rect(color = "black", fill = NA), 
     panel.background = element_rect(fill = "white")
   )
@@ -120,7 +120,7 @@ The two seasons are 2016 and 2017. these differ in environmental conditions or m
 # Create a data frame listing the models
 model_table <- tibble::tibble(
   Model_Number = 1:4,
-  Includes_Season = c("No", "Yes", "Yes", "No"),
+  Includes_Season = c("No", "Yes", "Yes", "No"), 
   Includes_EdgeDistance = c("No", "Yes", "No", "Yes"),
   Model_Description = c(
     "Null model (intercept only)",
@@ -173,26 +173,26 @@ The best model as determined by Akaike’s Information Criterion (AIC) is mod2 w
 #generate predicted prob w/ confidence interval
 preds <- ggpredict(mod2, terms= c("edge.distance [0:900 by=50]", "season"))
 
-# Plot predictions with underlying observed data
+# Plot for predictions 
 ggplot(preds, aes(x = x, y = predicted, color = group)) +
   geom_line(size = 1.2) +
-  geom_ribbon(aes(ymin = conf.low, ymax = conf.high, fill = group), alpha = 0.2, color = NA) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high, fill = group), alpha = 0.2, color = NA) + 
   geom_point(data = nest_boxes, aes(x = edge.distance, y = sp, color = as.factor(season)),
              position = position_jitter(height = 0.05), alpha = 0.5) +
-  labs(
+  labs( #adding labels and assigning each season its own color
     x = "Distance from Forest Edge (m)",
     y = "Probability of Swift Parrot Occupancy",
     color = "Season",
     fill = "Season"
   ) +
-  theme_minimal() +
+  theme_minimal() +#changing the theme becasue i want it to look clearer
   theme(
     panel.grid = element_blank(),
     panel.border = element_rect(color = "black", fill = NA)
   ) +
   scale_color_manual(values = c("2016" = "steelblue", "2019" = "lightgreen")) +
   scale_fill_manual(values = c("2016" = "steelblue", "2019" = "lightgreen"))
-
+#choosing colors for each year
 ```
 
 
