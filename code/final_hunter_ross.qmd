@@ -98,7 +98,7 @@ ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) 
 
 ### a. Response variable
 
-```{r}
+```{r - read in data}
 nest_boxes <- read.csv(here("data/occdist.csv"))
 ```
 The 1 means that the bird was present a 0 means that the bird was not present. 
@@ -113,7 +113,7 @@ The two seasons are 2016 and 2017. these differ in environmental conditions or m
 
 ### d. Table of models
 
-```{r}
+```{r -making a table}
 # Create a data frame listing the models
 model_table <- tibble::tibble(
   Model_Number = 1:4,
@@ -134,6 +134,14 @@ print(model_table)
 ### e. Run the models
 
 
+```{r -making the models}
+
+# Fit models
+mod1 <- glm(sp ~ 1, family = binomial, data = nest_boxes)  # Null model
+mod2 <- glm(sp ~ season * edge.distance, family = binomial, data = nest_boxes)  # Saturated
+mod3 <- glm(sp ~ season, family = binomial, data = nest_boxes)  # Season only
+mod4 <- glm(sp ~ edge.distance, family = binomial, data = nest_boxes)  # Edge only
+```
 
 ### f. Check the diagnostics
 
