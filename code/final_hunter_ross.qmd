@@ -202,6 +202,25 @@ Predicted probabilities of Swift Parrot nest box occupancy are shown as a functi
 
 ### j. Calculate model predictions
 
+```{r - model predict}
+# New data for prediction
+new_data <- expand.grid(
+  edge.distance = c(0, 900),
+  season = c(2016, 2019)
+)
+
+# Predict from best model (mod2)
+preds <- predict(mod2, newdata = new_data, type = "response", se.fit = TRUE)
+
+# Add predictions to new data frame
+new_data$predicted <- preds$fit
+new_data$lower <- preds$fit - 1.96 * preds$se.fit
+new_data$upper <- preds$fit + 1.96 * preds$se.fit
+
+# Display results
+print(new_data)
+
+```
 
 
 ### k. Interpret results
