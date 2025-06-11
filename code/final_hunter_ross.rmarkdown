@@ -3,7 +3,11 @@ title: "final_hunter_ross"
 format: html
 ---
 
+
+
 https://github.com/Hunter-Ross-3/ENVS-193DS_spring-2025_final
+
+
 
 ```{r - packages}
 #| message: false
@@ -19,6 +23,8 @@ library(MuMIn)
 # read in data
 sst <- read.csv(here("data/SST_update2023.csv"))
 ```
+
+
 
 # Problem 1: Research writing 
 
@@ -37,6 +43,8 @@ Nitrogen load increases with distance from the headwaters, suggesting downstream
 # Problem 2. Data Visualization
 
 ### a. Cleaning and summarizing
+
+
 
 ```{r - cleaning data}
 
@@ -63,7 +71,11 @@ str(sst_clean)
 ```
 
 
+
+
 ### b. Data visualization
+
+
 
 ```{r - visualization}
 
@@ -95,13 +107,19 @@ ggplot(sst_filtered, aes(x = month, y = mean_temp, group = year, color = year)) 
 ```
 
 
+
+
 # Problem 3. Data analysis
 
 ### a. Response variable
 
+
+
 ```{r - read in data}
 nest_boxes <- read.csv(here("data/occdist.csv"))
 ```
+
+
 The 1 means that the bird was present a 0 means that the bird was not present. 
 
 ### b. Purpose of study
@@ -113,6 +131,8 @@ Swift Parrots are a threatened species of conservation concern, while Common Sta
 The two seasons are 2016 and 2017. these differ in environmental conditions or management actions, which may affect Swift Parrot occupancy patterns. 
 
 ### d. Table of models
+
+
 
 ```{r -making a table}
 # Create a data frame listing the models
@@ -132,7 +152,11 @@ model_table <- tibble::tibble(
 print(model_table)
 ```
 
+
+
 ### e. Run the models
+
+
 
 
 ```{r -making the models}
@@ -144,7 +168,11 @@ mod3 <- glm(sp ~ season, family = binomial, data = nest_boxes)  # Season only
 mod4 <- glm(sp ~ edge.distance, family = binomial, data = nest_boxes)  # Edge only
 ```
 
+
+
 ### f. Check the diagnostics
+
+
 
 ```{r}
 library("DHARMa")
@@ -156,19 +184,29 @@ simulateResiduals(mod4) |> plot()
 
 ```
 
+
+
 ### g. Select the best model
+
+
 
 ```{r - mod AIC comparison}
  # compare models by AIC
  model.sel(mod1, mod2, mod3, mod4)
 ```
+
+
 The best model as determined by Akaike’s Information Criterion (AIC) is mod2 which includes the season, edge distance, and their interaction. We know that this model is the best because it has the lowest AIC value of 227.0 as well as the highest model weight of 78.2%. 
 
 ### h. Visualize the model predictions
 
+
+
 ```{r}
 
 ```
+
+
 
 
 ### i. Write a caption for figure
@@ -190,6 +228,7 @@ The best model as determined by Akaike’s Information Criterion (AIC) is mod2 w
 
 
 ### b. Sharing your affective visualization
+
 
 
 
