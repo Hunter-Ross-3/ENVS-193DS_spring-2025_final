@@ -109,11 +109,27 @@ Swift Parrots are a threatened species of conservation concern, while Common Sta
 
 ### c. Difference in "seasons"
 
-
+The two seasons are 2016 and 2017. these differ in environmental conditions or management actions, which may affect Swift Parrot occupancy patterns. 
 
 ### d. Table of models
 
+```{r}
+# Create a data frame listing the models
+model_table <- tibble::tibble(
+  Model_Number = 1:4,
+  Includes_Season = c("No", "Yes", "Yes", "No"),
+  Includes_EdgeDistance = c("No", "Yes", "No", "Yes"),
+  Model_Description = c(
+    "Null model (intercept only)",
+    "Saturated model (season + edge distance + interaction)",
+    "Model with season only",
+    "Model with edge distance only"
+  )
+)
 
+# Display the table
+print(model_table)
+```
 
 ### e. Run the models
 
