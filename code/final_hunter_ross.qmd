@@ -225,7 +225,7 @@ print(new_data)
 
 ### k. Interpret results
 
-
+At 0 m from the forest edge, the predicted probability of Swift Parrot nest box occupancy was higher in 2017 (~0.67) than in 2019 (~0.47). At 900 m, the predicted probability dropped in both years, to around 0.50 in 2016 and near 0.25 in 2019, indicating a clear decline with distance. This shows that Swift Parrots are more likely to occupy nest boxes closer to the forest edge, and this effect was stronger in 2016. The best model revealed an interaction between season and edge distance, suggesting that environmental conditions or resource availability in different years affect how edge-sensitive the species is. Biologically, this pattern likely reflects Swift Parrots’ reliance on edge habitats for foraging and nesting resources, such as flowering eucalyptus or proximity to safe flight corridors.
 
 # Problem 4. Affective and exploratory visualizations
 
