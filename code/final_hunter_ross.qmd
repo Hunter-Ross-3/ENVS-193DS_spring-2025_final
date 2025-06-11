@@ -145,6 +145,15 @@ mod4 <- glm(sp ~ edge.distance, family = binomial, data = nest_boxes)  # Edge on
 
 ### f. Check the diagnostics
 
+```{r}
+library("DHARMa")
+# Run diagnostics and plot
+simulateResiduals(mod1) |> plot()
+simulateResiduals(mod2) |> plot()
+simulateResiduals(mod3) |> plot()
+simulateResiduals(mod4) |> plot()
+
+```
 
 
 ### g. Select the best model
