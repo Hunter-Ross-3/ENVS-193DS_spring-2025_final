@@ -15,6 +15,8 @@ library(here)
 library(flextable)
 library(readxl)
 library(MuMIn)
+library(ggeffects)
+
 
 # read in data
 sst <- read.csv(here("data/SST_update2023.csv"))
@@ -166,14 +168,37 @@ The best model as determined by Akaike’s Information Criterion (AIC) is mod2 w
 
 ### h. Visualize the model predictions
 
-```{r}
+```{r - visualization of best model}
+#| warning: false
+#generate predicted prob w/ confidence interval
+preds <- ggpredict(mod2, terms= c("edge.distance [0:900 by=50]", "season"))
+
+# Plot predictions with underlying observed data
+ggplot(preds, aes(x = x, y = predicted, color = group)) +
+  geom_line(size = 1.2) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high, fill = group), alpha = 0.2, color = NA) +
+  geom_point(data = nest_boxes, aes(x = edge.distance, y = sp, color = as.factor(season)),
+             position = position_jitter(height = 0.05), alpha = 0.5) +
+  labs(
+    x = "Distance from Forest Edge (m)",
+    y = "Probability of Swift Parrot Occupancy",
+    color = "Season",
+    fill = "Season"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    panel.border = element_rect(color = "black", fill = NA)
+  ) +
+  scale_color_manual(values = c("2016" = "steelblue", "2019" = "lightgreen")) +
+  scale_fill_manual(values = c("2016" = "steelblue", "2019" = "lightgreen"))
 
 ```
 
 
 ### i. Write a caption for figure
 
-
+Predicted probabilities of Swift Parrot nest box occupancy are shown as a function of distance from the forest edge in 2016 and 2019, with 95% confidence intervals. Observed data are overlaid as points. The 2016 season shows higher occupancy probabilities overall and a stronger decrease with distance. Data: occdist.csv (2025).
 
 ### j. Calculate model predictions
 
@@ -190,13 +215,6 @@ The best model as determined by Akaike’s Information Criterion (AIC) is mod2 w
 
 
 ### b. Sharing your affective visualization
-
-
-
-
-
-
-
 
 
 
