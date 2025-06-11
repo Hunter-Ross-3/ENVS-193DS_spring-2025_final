@@ -230,20 +230,8 @@ At 0 m from the forest edge, the predicted probability of Swift Parrot nest box 
 # Problem 4. Affective and exploratory visualizations
 
 ### a. Comparing visualizations
-
-
-
-### b. Sharing your affective visualization
-
-
-
-
-
-
-
-
-
-
-
-
+In Homework 2, I used a scatter plot to show each individual data point based on how much I spent and how many hours I was on campus. For Homework 3, I switched it up and used a circle graph that showed the average money I spent each day, grouped by day of the week.
+Both of my visualizations focused on total money spent and tried to connect that to how much time I was spending on campus.
+In the scatter plot from Homework 2, I could kind of see that the more time I spent on campus, the more money I spent—but it wasn’t super clear since it didn’t include the days of the week. In Homework 3, by showing the daily averages, it was easier to notice that I spent more on certain days when I was on campus longer. So yeah, the patterns were different because the second visualization grouped the data and made it easier to compare across days. 
+One piece of feedback I got was to add labels to make the chart easier to understand, so I added a legend, which helped a lot. Someone also suggested adding black outlines around the slices in the circle graph, but when I tried it, I didn’t like how it looked, so I left them off. Another cool idea was to include the actual items I bought in each slice, but I didn’t know how to do that, so I didn’t end up including it.
 
